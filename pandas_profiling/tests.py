@@ -1,8 +1,8 @@
 # coding=UTF-8
-
-import unittest
 # For Python 2.7 division operator to return floats
 from __future__ import division
+
+import unittest
 
 import datetime
 import numpy as np
@@ -305,13 +305,13 @@ class Describe1dTest(unittest.TestCase):
         self._assert_unique(pd.Series([np.nan]), True, 1)
         # Unique values including nan
         self._assert_unique(pd.Series([1, 2, np.nan]), True, 1)
-        # Non unique values
+        # Non unique values - note for python 2.7 this must be __future__.division
         self._assert_unique(pd.Series([1, 2, 2]), False, 2/3)
-        # Non unique nan
+        # Non unique nan - note for python 2.7 this must be __future__.division
         self._assert_unique(pd.Series([1, np.nan, np.nan]), False, 2/3)
-        # Non unique values including nan
+        # Non unique values including nan - note for python 2.7 this must be __future__.division
         self._assert_unique(pd.Series([1, 2, 2, np.nan]), False, 3/4)
-        # Non unique values including non unique nan
+        # Non unique values including non unique nan - note for python 2.7 this must be __future__.division
         self._assert_unique(pd.Series([1, 2, 2, np.nan, np.nan]), False, 3/5)
 
     def _assert_unique(self, data, is_unique, p_unique):
