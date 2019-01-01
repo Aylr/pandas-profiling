@@ -13,6 +13,7 @@ BACKEND = matplotlib.get_backend()
 if matplotlib.get_backend().lower() != BACKEND.lower():
     # If backend is not set properly a call to describe will hang
     matplotlib.use(BACKEND)
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 try:
     from StringIO import BytesIO

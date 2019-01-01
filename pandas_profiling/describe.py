@@ -6,6 +6,7 @@ from functools import partial
 import numpy as np
 import pandas as pd
 import matplotlib
+matplotlib.use('Agg')
 
 from pkg_resources import resource_filename
 import pandas_profiling.formatters as formatters
