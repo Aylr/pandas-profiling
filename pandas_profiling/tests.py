@@ -1,6 +1,8 @@
 # coding=UTF-8
 
 import unittest
+# For Python 2.7 division operator to return floats
+from __future__ import division
 
 import datetime
 import numpy as np
