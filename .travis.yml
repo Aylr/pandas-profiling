@@ -1,9 +1,12 @@
-# Based on http://conda.pydata.org/docs/travis.html
 language: python
+cache: pip
 python:
   - "2.7"
   - "3.3"
   - "3.4"
+  - "3.5"
+  - "3.6"
+  # TODO 3.7 when travis supports it
 install:
   - sudo apt-get update
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
@@ -17,15 +20,9 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
-
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pandas matplotlib
   - source activate test-environment
   - python setup.py install
 
 script:
   - python -m unittest -v pandas_profiling.tests
-
-notifications:
-  email:
-    on_success: change
-    on_failure: change
