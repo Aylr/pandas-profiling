@@ -7,7 +7,7 @@ python:
   - "3.6"
   # TODO 3.7 when travis supports it or workaround
   - "3.7-dev"
-  - "3.8-dev"
+  # TODO add 3.8-dev
 install:
   - pip install -e .
 script:
