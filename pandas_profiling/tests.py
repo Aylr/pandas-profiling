@@ -47,7 +47,7 @@ class DataFrameTest(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.test_dir)
 
-    @unittest.skip('Failing')
+    @unittest.skip('Tech Debt: Temporarily disabled to get CI working.')
     def test_describe_df(self):
 
         expected_results = {}
@@ -255,7 +255,7 @@ class DataFrameTest(unittest.TestCase):
         html = to_html(self.df.head(), self.results)
         self.assertLess(1000, len(html))
 
-    @unittest.skip('Failing')
+    @unittest.skip('Tech Debt: Temporarily disabled to get CI working.')
     def test_bins(self):
         self.results = describe(self.df, bins=100)
         self.test_describe_df()
@@ -270,7 +270,7 @@ class DataFrameTest(unittest.TestCase):
 
 
 class CategoricalDataTest(unittest.TestCase):
-    @unittest.skip('Failing')
+    @unittest.skip('Tech Debt: Temporarily disabled to get CI working.')
     def test_recoding_reject(self):
         self.data = {
              'x': ['chien', 'chien', 'chien', 'chien', 'chat', 'chat', 'chameaux', 'chameaux'],
